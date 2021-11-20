@@ -1,8 +1,9 @@
 // Assignment code here
 
-var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",]
-var specialCharacters = [" ", "!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"]
+var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+var lowerCase = "abcdefghijklmnopqrstuvwxyz"
+var specialCharacters = " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~" 
+var numeric = "123456789"
 
 
 // Get references to the #generate element
@@ -13,10 +14,37 @@ function writePassword() {
   var password = generatePassword() 
   var passwordText = document.querySelector("#password");
   
-function generatePassword() {
-  window.prompt("How long would you like your desired password to be? The accepted character range is 8 to 128.")
+function generatePassword(capitalLength) {
+  var upper = window.prompt("Would you like uppercase letters in your password? Type 'YES' or 'NO' to respond.");
+  var passD = ""
+  
+  if (upper === "yes" || upper === "YES") {
+  
+    // for (var i = 0; i < capitalLength; i++) {
+      passD += upperCase.charAt(Math.floor(Math.random()*upperCase.length))
+    // }
+    
+    console.log(passD)
+    }
+  }
 
-}
+  // var lower = window.prompt("Would you like lowercase letters in your password? Type 'YES' or 'NO' to responsd.");
+  // if (lower === "yes" || lower === "YES") {
+  //   function randomLower(lowerCase)
+  //   {
+  //     return Math.floor(Math.random()*lowerCase.length)
+  //   }
+  //   console.log(randomLower(lowerCase), randomLower(lowerCase))
+  //   }
+  // var special = window.prompt("Would you like special characters in your password? Type 'YES or 'NO' to respond.");
+  // if (special === "yes" || special === "YES") {
+
+  // }
+
+  
+  
+
+  // }
  
   
 
@@ -28,4 +56,4 @@ function generatePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword)
