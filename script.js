@@ -95,6 +95,7 @@ else if (confirmNumbers) {
 
 var password = []; 
 
+// here is where the random selection of variables starts for the password
 for (var i = 0; i < userInput; i++) {
   var userChoices = enteredData[Math.floor(Math.random() * enteredData.length)];
   password.push(userChoices);
